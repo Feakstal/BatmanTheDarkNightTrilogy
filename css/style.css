@@ -257,7 +257,7 @@ body {
   font-family: "Space Grotesk";
   font-weight: 400;
   font-size: 18px;
-  background: url("../img/Background.png") no-repeat;
+  background: url("../img/Background.png") center no-repeat;
   background-size: cover;
   background-color: #000;
   color: #fff;
@@ -275,13 +275,13 @@ body._lock {
 }
 
 [class*=__container] {
-  max-width: 1410px;
+  max-width: 1270px;
   margin: 0px auto;
   padding: 0px 15px;
 }
 
 /* PC */
-@media (max-width: 1410px) {
+@media (max-width: 1240px) {
   [class*=__container] {
     max-width: 970px;
   }
@@ -418,9 +418,8 @@ body._lock {
 }
 .cards__row {
   display: flex;
-  margin: 0px auto;
-  flex-wrap: wrap;
-  gap: 99px;
+  flex-wrap: nowrap;
+  gap: 30px;
   justify-content: center;
 }
 
@@ -462,7 +461,7 @@ body._lock {
   align-items: center;
 }
 
-@media (max-width: 1410px) {
+@media (max-width: 1240px) {
   .menu__body {
     margin: 0 40px 0 0;
   }
@@ -470,10 +469,13 @@ body._lock {
     gap: 40px;
   }
   .cards__row {
-    gap: 55px;
+    flex-wrap: wrap;
   }
 }
 @media (max-width: 991.98px) {
+  body {
+    background-position: 60% 0;
+  }
   .header__logo._active::before {
     -webkit-transform: rotate(-45deg) translate(-5px, 6px);
     transform: rotate(-45deg) translate(-5px, 6px);

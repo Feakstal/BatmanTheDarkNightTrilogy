@@ -1,9 +1,13 @@
 # Batman The Dark Night Trilogy layoyt demonstration
 
-## **Breakpoints (max-width)**
-- ### 1440px
+## Original layout width (1440px)
 
 ![](screenshots/1440px.png)
+
+## **Breakpoints (max-width)**
+- ### 1240px
+
+![](screenshots/1240px.png)
 
 - ### 991px
 
