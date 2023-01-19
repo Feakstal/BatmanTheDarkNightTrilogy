@@ -1,0 +1,365 @@
+@import url(https://fonts.googleapis.com/css?family=Space+Grotesk:300,regular,500,600,700);
+@import "clear-style";
+@import "components/header";
+@import "components/movie-card";
+
+body {
+  font-family: "Space Grotesk";
+  font-weight: 400;
+  font-size: 18px;
+  background: url("../img/Background.png") no-repeat;
+  background-size: cover;
+  background-color: #000;
+  color: #fff;
+  font-feature-settings: 'liga' off;
+
+  &._lock {
+    overflow: hidden;
+  }
+}
+.wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+[class*="__container"] {
+  max-width: 1410px;
+  margin: 0px auto;
+  padding: 0px 15px;
+}
+/* PC */
+@media (max-width: 1410px) {
+  [class*="__container"] {
+    max-width: 970px;
+  }
+}
+/* TABLET  */
+@media (max-width: 991.98px) {
+  [class*="__container"] {
+    max-width: 750px;
+  }
+}
+/* MOBILE */
+@media (max-width: 767.98px) {
+  [class*="__container"] {
+    max-width: none;
+  }
+}
+/* MOBILE SMALL */
+@media (max-width: 479.98px) {
+}
+.header {
+  user-select: none;
+}
+.main {
+  flex: 1 1 auto;
+}
+.batman-trilogy {
+  &__container {
+    padding: 170px 15px 37px;
+  }
+
+  &__about {
+    margin: 0 0 55px 0;
+  }
+}
+.about {
+  &__title {
+    margin: 0 0 16px 0;
+  }
+
+  &__subtitle {
+    margin: 0 0 36px 0;
+  }
+
+  &__genres {
+    display: flex;
+    gap: 32px;
+    margin: 0 0 38px 0;
+  }
+
+  &__plot {
+    margin: 0 0 48px 0;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+}
+.title {
+  font-weight: 700;
+  @include responsive-font(72, 48);
+  line-height: 98px;
+}
+.subtitle {
+  font-weight: 700;
+  @include responsive-font(28, 24);
+  line-height: 40px;
+}
+.genres {
+  color: #B2B2B2;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.plot {
+  max-width: 604px;
+
+  &__text-bold {
+    margin: 0 0 16px 0;
+  }
+}
+.plot-text {
+  &_bold {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  &_regular {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+
+    a {
+      cursor: pointer;
+      color: #fff;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+  }
+}
+.button-main {
+  padding: 12px 67px 12px 68px;
+  font-weight: 600;
+  @include responsive-font(24, 18);
+  line-height: 32px;
+}
+.cards {
+  &__wrapper {
+    display: flex;
+  }
+
+  &__row {
+    display: flex;
+    margin: 0px auto;
+    flex-wrap: wrap;
+    gap: 99px;
+    justify-content: center;
+  }
+}
+.footer {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+
+  &__container {
+    display: flex;
+    padding: 0 15px 36px 15px;
+    justify-content: space-between;
+  }
+}
+.brand {
+  &__wrapper {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  &__brand-icons {
+    display: flex;
+    gap: 12px;
+  }
+}
+.franchise-text {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #929292;
+}
+.social {
+  &__wrapper {
+    display: flex;
+  }
+
+  &__social-icons {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+}
+@media (max-width: 1410px) {
+  .menu {
+    &__body {
+      margin: 0 40px 0 0;
+    }
+
+    &__list {
+      gap: 40px;
+    }
+  }
+  .cards {
+    &__row {
+      gap: 55px;
+    }
+  }
+}
+@media (max-width: 991.98px) {
+  .header {
+    &__logo {
+      &._active {
+
+        &::before {
+            -webkit-transform: rotate(-45deg) translate(-5px, 6px);
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        &::after {
+            -webkit-transform: rotate(45deg) translate(-5px, -6px);
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        & span {
+            transform: scale(0) translate(0px, -50%);
+        }
+      }
+    }
+  }
+
+  .menu {
+    &__body {
+      position: fixed;
+      overflow: auto;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      transition: left 0.3s ease 0s;
+      padding: 100px 15px 30px 15px;
+
+      &._active {
+        left: 0;
+      }
+    }
+    &__icon {
+      margin-left: 20px;
+      z-index: 5;
+      display: block;
+      position: relative;
+      width: 30px;
+      height: 18px;
+      cursor: pointer;
+      
+      & span,
+      &::before,
+      &::after {
+          left: 0;
+          position: absolute;
+          height: 10%;
+          width: 100%;
+          transition: all 0.3s ease 0s;
+          background-color: #fff;
+      }
+
+      &::before,
+      &::after {
+          content: "";
+      }
+
+      &::before {
+          top: 0;
+      }
+
+      &::after {
+          bottom: 0;
+      }
+
+      & span {
+          top: 50%;
+          transform: scale(1) translate(0px, -50%);
+      }
+
+      &._active {
+
+          &::before {
+              -webkit-transform: rotate(-45deg) translate(-5px, 6px);
+              transform: rotate(-45deg) translate(-5px, 6px);
+          }
+
+          &::after {
+              -webkit-transform: rotate(45deg) translate(-5px, -6px);
+              transform: rotate(45deg) translate(-5px, -6px);
+          }
+
+          & span {
+              transform: scale(0) translate(0px, -50%);
+          }
+      }
+    }
+    &__list {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+  }
+}
+@media (max-width: 767.98px) {
+  .about {
+    &__button {
+      justify-content: center;
+    }
+  }
+  .title {
+    text-align: center;
+  }
+  .subtitle {
+    text-align: center;
+  }
+  .genres {
+    text-align: center;
+    justify-content: center;
+  }
+  .franchise {
+    &__franchise-text {
+      max-width: 246px;
+    }
+  }
+}
+@media (max-width: 479.98px) {
+
+  .item-poster {
+    img {
+      display: none;
+    }
+  }
+
+  .item-description {
+    &__item-buttons {
+      margin: 0 0 16px 0;
+    }
+  }
+
+  .footer {
+    &__container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__brand {
+      margin: 0 0 12px 0;
+    }
+  }
+
+  .franchise-text {
+    text-align: center;
+  }
+}

@@ -1,0 +1,11 @@
+@mixin button-yellow {
+  background-color: #FDFF00;
+  border-radius: 8px;
+  transition: all ease .3s;
+  color: #000;
+  font-weight: 700;
+
+  &:hover {
+    background-color: #fff;
+  }
+}
